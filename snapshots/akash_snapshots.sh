@@ -25,6 +25,6 @@ akash query distribution rewards $address -o json | jq . | grep -w reward -A 4 |
 # total snapshots
 akash query distribution rewards $address -o json | jq . | grep -w total -A 4 | grep amount | awk -F':' '{print $2}' | sed "s/\"//g" | sed "s/\ //g" > ${base_dir}/total-`date '+%Y%m%d'`.log
 
-log="时间: `date '+%Y-%m-%d %H:%M:%S'` UTC \n主机名: `hostname` \n节点: $service \n状态: 快照已完成。"
+log="时间: `date '+%Y-%m-%d %H:%M:%S'` UTC \n主机名: akash-mainnet \n节点: $service \n状态: 快照已完成。"
 echo -e $log >> $log_file
 curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"'"$log"'"}}' ${lark_webhook_url}
