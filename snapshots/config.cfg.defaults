@@ -1,0 +1,7 @@
+SERVICE=Akash Snapshots
+BASE_DIR=/data/monitor/exinpool/Akash/snapshots/results
+LOG_FILE=akash_snapshots.log
+ADDRESS=YOUR_ADDRESS
+WEBHOOK_URL=https://webhook.exinwork.com/api/send?access_token
+ACCESS_TOKEN=YOUR_ACCESS_TOKEN
+LARK_WEBHOOK_URL=https://open.larksuite.com/open-apis/bot/v2/hook/
