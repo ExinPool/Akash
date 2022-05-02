@@ -54,7 +54,7 @@ Add crontab like this in the server.
 
 ``` bash
 # Akash node sync monitor
-* * * * * cd /data/monitor/exinpool/Akash/process && bash akash_sync_lark.sh >> akash_sync.log &
+* * * * * cd /data/monitor/exinpool/Akash/sync && bash akash_sync_lark.sh >> akash_sync.log &
 ```
 
 The crontab will run every minute then you can check the log in the `akash_sync.log`.
