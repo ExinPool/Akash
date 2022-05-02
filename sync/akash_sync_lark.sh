@@ -21,7 +21,7 @@ abs_num="$(config_get ABS_NUM)"
 log_file="$(config_get LOG_FILE)"
 lark_webhook_url="$(config_get LARK_WEBHOOK_URL)"
 
-local_blocks=`akash status | jq | grep latest_block_height | awk -F':' '{print $2}' | sed "s/,//g" | sed 's/"//g' | sed "s/ //g"`
+local_blocks=`curl -s ${local_host} | jq | grep latest_block_height | awk -F':' '{print $2}' | sed "s/,//g" | sed 's/"//g' | sed "s/ //g"`
 remote_first_blocks=`curl -s ${remote_host_first} | jq | grep block_height | awk -F':' '{print $2}' | sed "s/,//g" | sed 's/"//g' | sed "s/ //g"`
 remote_second_blocks=`curl -s ${remote_host_second} | jq | grep height | awk -F':' '{print $2}' | sed "s/,//g" | sed 's/"//g' | sed "s/ //g"`
 log="`date '+%Y-%m-%d %H:%M:%S'` UTC `hostname` `whoami` INFO local_blocks: ${local_blocks}, remote_first_blocks: ${remote_first_blocks}, remote_second_blocks: ${remote_second_blocks}"

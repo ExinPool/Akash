@@ -1,5 +1,5 @@
 SERVICE=Akash
-LOCAL_HOST=http://127.0.0.1:26657
+LOCAL_HOST=http://127.0.0.1:26657/status
 REMOTE_HOST_FIRST=https://api-akash.cosmostation.io/v1/status
 REMOTE_HOST_SECOND=https://api.akash.aneka.io/stats
 ABS_NUM=100
