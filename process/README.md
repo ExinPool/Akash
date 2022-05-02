@@ -1,6 +1,6 @@
-# Mixin Node Process Monitor
+# Akash Node Process Monitor
 
-> Mixin node process monitor tools.
+> Akash node process monitor tools.
 
 [![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger) [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
@@ -26,7 +26,7 @@
 ``` bash
 $ sudo mkdir -p /data/monitor/exinpool
 $ cd /data/monitor/exinpool
-$ sudo git clone https://github.com/ExinPool/Mixin
+$ sudo git clone https://github.com/ExinPool/Akash
 ```
 
 ### Setup
@@ -40,41 +40,26 @@ Invite Webhook and somebody who want to receive monitor message to a small group
 Copy `config.cfg.defaults` to `config.cfg` and change some varibles like this in the `config.cfg`.
 
 ``` bash
-SERVICE=Mixin
-PROCESS=8239
+SERVICE=Akash
+PROCESS=26657
 PROCESS_NUM=1
-HOST=
-LOG_FILE=mixin_process.log
-SNAPSHOTS_LOG_FILE=mixin_snapshots.log
-RSYNC_LOG_FILE=rsync_process.log
-WEBHOOK_URL=https://webhook.exinwork.com/api/send?access_token
-ACCESS_TOKEN=YOUR_ACCESS_TOKEN
+LOG_FILE=akash_process.log
 LARK_WEBHOOK_URL=https://open.larksuite.com/open-apis/bot/v2/hook/
 ```
 
 Add crontab like this in the server.
 
 ``` bash
-# Mixin node process monitor
-*/5 * * * * cd /data/monitor/exinpool/Mixin/process && bash mixin_process.sh >> mixin_process.log &
-
-# Mixin node process monitor
-*/5 * * * * cd /data/monitor/exinpool/Mixin/process && bash mixin_process_lark.sh >> mixin_process.log &
-
-# Mixin node snapshots monitor
-* * * * * cd /data/monitor/exinpool/Mixin/process && bash mixin_snapshots.sh >> mixin_snapshots.log &
-
-# Mixin node rsync monitor
-* * * * * cd /data/monitor/exinpool/Mixin/process && bash rsync_process.sh >> rsync_process.log &
+# Akash node process monitor
+*/5 * * * * cd /data/monitor/exinpool/Akash/process && bash akash_process_lark.sh >> akash_process.log &
 ```
 
-The crontab will run every minute then you can check the log in the `mixin_process.log`.
+The crontab will run every minute then you can check the log in the `akash_process.log`.
 
 ## Features
 
-- Monitor Mixin node process
+- Monitor Akash node process
 - Send alarm message when node is abnormal
-- Send alarm message via Webhook which based on Mixin API
 - Send alarm message to Lark
 
 ## Contributing
