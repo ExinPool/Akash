@@ -1,0 +1,5 @@
+SERVICE=Akash
+PROCESS=26657
+PROCESS_NUM=1
+LOG_FILE=akash_process.log
+LARK_WEBHOOK_URL=https://open.larksuite.com/open-apis/bot/v2/hook/
