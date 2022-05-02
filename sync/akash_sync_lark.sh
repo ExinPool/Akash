@@ -43,6 +43,6 @@ then
     echo -e $log >> $log_file
     curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"'"$log"'"}}' ${lark_webhook_url}
 else
-    log="时间: `date '+%Y-%m-%d %H:%M:%S'` UTC \n主机名: `hostname` \n节点: ${local_host}, ${local_blocks} \n远端节点 1: ${remote_host_first}, ${remote_first_blocks} \n远端节点 2: ${remote_host_second}, ${remote_second_blocks}"
+    log="时间: `date '+%Y-%m-%d %H:%M:%S'` UTC 主机名: `hostname` 节点: ${local_host}, ${local_blocks} 远端节点 1: ${remote_host_first}, ${remote_first_blocks} 远端节点 2: ${remote_host_second}, ${remote_second_blocks}"
     echo $log >> $log_file
 fi
